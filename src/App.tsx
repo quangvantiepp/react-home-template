@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
+import logo from "./logo.svg";
+import "./App.css";
+import LoginForm from "./components/layout/login/LoginForm";
+import LayoutMain from "./components/layout/LayoutPages/LayoutMain";
+import HomePage from "./pages/home/HomePage";
 
 function App() {
+  const [checkLogin, setCheckLogin] = useState<boolean>(false);
+
+  useEffect(() => {
+    // render again
+  }, [checkLogin]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-        tiep  Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <nav>
+        <Link to="/"> Home</Link>
+
+        <Link to="/layout"> page1</Link>
+
+        <Link to="/home"> page2</Link>
+      </nav>
+      */}
+      {checkLogin === false ? (
+        <Routes>
+          <Route
+            path="/"
+            element={<LoginForm setLogin={setCheckLogin} />}
+          ></Route>
+          <Route
+            path="/main"
+            element={<LayoutMain setLogin={setCheckLogin} />}
+          ></Route>
+        </Routes>
+      ) : (
+        <LayoutMain setLogin={setCheckLogin} />
+      )}
     </div>
   );
 }
