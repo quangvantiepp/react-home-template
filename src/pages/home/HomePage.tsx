@@ -1,16 +1,14 @@
 import { Button, Result } from "antd";
 import React from "react";
-
+import hotgirl from "../../assets/hotGirl.jpg";
+import styles from "./HomePage.module.css";
+import EmbedYoutube from "../../videos/clipYoutube/EmbedYoutube";
 const HomePage: React.FC = () => {
   return (
     <div>
-      <h1> Home</h1>
-      <Result
-        status="500"
-        title="500"
-        subTitle="Sorry, something went wrong."
-        extra={<Button type="primary">Back Home</Button>}
-      />
+      <h3> Home page </h3>
+      <img src={hotgirl} alt="not loading" className={styles.picture} />
+      <EmbedYoutube />
     </div>
   );
 };

@@ -4,24 +4,16 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
 
-const LoginForm: React.FC<{ setLogin: any; checkLogin?: any }> = (props) => {
+const LoginForm: React.FC = (props) => {
   const navigate = useNavigate();
 
   const onFinish = (values: any) => {
-    console.log("Received values of form: ", values);
     if (values?.username === "tiep" && values?.password === "8888") {
-      props?.setLogin(true);
       navigate("/main");
     } else {
-      message.error("userName or password incorrect ");
+      message.error("username or password incorrect ");
     }
   };
-
-  useEffect(() => {
-    if (!props?.checkLogin) {
-      props.setLogin(false);
-    }
-  }, [props?.checkLogin]);
 
   return (
     <div style={{ display: "flex", justifyContent: "center", marginTop: 30 }}>
