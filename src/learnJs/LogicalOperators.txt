@@ -1,0 +1,191 @@
+Toán tử so sánh (Comparison Operators):
+
+==: So sánh bằng (không kiểm tra kiểu dữ liệu).
+===: So sánh bằng (kiểm tra cả kiểu dữ liệu).
+!=: So sánh khác (không kiểm tra kiểu dữ liệu).
+!==: So sánh khác (kiểm tra cả kiểu dữ liệu).
+>: Lớn hơn.
+<: Nhỏ hơn.
+>=: Lớn hơn hoặc bằng.
+<=: Nhỏ hơn hoặc bằng.
+Toán tử logic (Logical Operators):
+
+&&: Toán tử AND logic.
+||: Toán tử OR logic.
+!: Toán tử NOT logic.
+Toán tử gán (Assignment Operators):
+
+=: Gán giá trị.
++=: Cộng và gán.
+-=: Trừ và gán.
+*=: Nhân và gán.
+/=: Chia và gán.
+%=: Chia lấy dư và gán.
+Toán tử số học (Arithmetic Operators):
+
++: Phép cộng.
+-: Phép trừ.
+*: Phép nhân.
+/: Phép chia.
+%: Phép chia lấy dư.
+++: Tăng giá trị lên 1 (sử dụng trước hoặc sau biến).
+--: Giảm giá trị đi 1 (sử dụng trước hoặc sau biến).
+Toán tử chuỗi (String Operators):
+
++: Nối chuỗi.
+Toán tử ba ngôi (Conditional Operator):
+
+condition ? expr1 : expr2: Điều kiện ba ngôi, trả về expr1 nếu điều kiện đúng và expr2 nếu điều kiện sai.
+Toán tử typeof: Trả về kiểu dữ liệu của một biểu thức.
+
+Toán tử in: Kiểm tra xem một thuộc tính có tồn tại trong một đối tượng hay không.
+
+Toán tử instanceof: Kiểm tra xem một đối tượng có phải là một thể hiện của một hàm xây dựng (constructor) cụ thể hay không.
+
+Toán tử điều kiện (Comma Operator): Cho phép bạn thực hiện nhiều biểu thức và trả về kết quả của biểu thức cuối cùng.
+
+Toán tử typeof: Trả về kiểu dữ liệu của một biểu thức.
+
+Toán tử in: Kiểm tra xem một thuộc tính có tồn tại trong một đối tượng hay không.
+
+Toán tử instanceof: Kiểm tra xem một đối tượng có phải là một thể hiện của một hàm xây dựng (constructor) cụ thể hay không.
+
+Toán tử typeof: Trả về kiểu dữ liệu của một biểu thức.
+
+Toán tử in: Kiểm tra xem một thuộc tính có tồn tại trong một đối tượng hay không.
+
+Toán tử instanceof: Kiểm tra xem một đối tượng có phải là một thể hiện của một hàm xây dựng (constructor) cụ thể hay không.
+
+Toán tử delete: Loại bỏ một thuộc tính từ một đối tượng hoặc một phần tử từ một mảng.
+
+Toán tử typeof: Trả về kiểu dữ liệu của một biểu thức.
+
+Toán tử in: Kiểm tra xem một thuộc tính có tồn tại trong một đối tượng hay không.
+
+Toán tử instanceof: Kiểm tra xem một đối tượng có phải là một thể hiện của một hàm xây dựng (constructor) cụ thể hay không.
+
+//////////////// các toán tử khác nâng cao hơn
+
+Trong JavaScript, toán tử "!!" được gọi là "toán tử kép phủ định" hoặc "toán tử kép phủ định chuyển đổi kiểu dữ liệu". 
+Toán tử này thường được sử dụng để chuyển đổi một giá trị sang kiểu boolean (true hoặc false) và đảm bảo rằng giá trị 
+đó là một boolean.
+
+Cụ thể, nó hoạt động như sau:
+
+Nếu giá trị ban đầu là falsy (false, 0, "", null, undefined, NaN), thì kết quả sẽ là false.
+Nếu giá trị ban đầu là truthy (bất kỳ giá trị nào khác), thì kết quả sẽ là true.
+Dưới đây là một số ví dụ:
+
+javascript
+Copy code
+var x = 5;
+var y = "";
+
+console.log(!!x); // Kết quả: true, x là một giá trị truthy
+console.log(!!y); // Kết quả: false, y là một giá trị falsy
+Toán tử "!!" thường được sử dụng để kiểm tra xem một biến có tồn tại (không phải là undefined hoặc null) và có giá trị hay không.
+
+"": Giá trị này là một chuỗi rỗng. Nó là một chuỗi không có ký tự nào bên trong. Trong ngữ cảnh của các biểu thức điều kiện, như trong một lệnh if, giá trị "" được coi là falsy, nghĩa là nó đánh dấu một giá trị không đúng, và khi bạn chuyển đổi nó sang kiểu boolean bằng toán tử "!!", kết quả sẽ là false.
+
+Ví dụ:
+
+javascript
+Copy code
+var emptyString = "";
+if (!emptyString) {
+    console.log("emptyString is falsy.");
+}
+NaN: Giá trị này là một viết tắt cho "Not-a-Number" và thường xuất hiện khi có một phép toán không hợp lệ với kiểu dữ liệu số. Ví dụ, chia một số cho chuỗi không thể chuyển đổi thành số sẽ tạo ra giá trị NaN. NaN cũng được coi là falsy trong các biểu thức điều kiện.
+
+Ví dụ:
+
+javascript
+Copy code
+var result = 10 / "hello"; // Kết quả là NaN
+if (!isNaN(result)) {
+    console.log("result is not NaN.");
+}
+Lưu ý rằng "" và NaN đều là falsy, nhưng không phải tất cả falsy đều là "" hoặc NaN. Các giá trị như 0, false, null, và undefined cũng là falsy trong JavaScript.
+
+///////
+Trong JavaScript, toán tử "??", được gọi là "toán tử nullish coalescing" hoặc "toán tử gộp nullish", được sử dụng để lựa chọn giá trị mặc định khi giá trị bên trái của nó là null hoặc undefined, nhưng không phải khi giá trị bên trái là một giá trị falsy khác như 0, false, hoặc "".
+
+Cú pháp của toán tử ?? là:
+
+javascript
+Copy code
+biểu_thức_được_đánh_giá ?? giá_trị_mặc_định
+Nếu biểu thức được đánh giá không phải là null hoặc undefined, kết quả sẽ là giá trị của biểu thức.
+Nếu biểu thức được đánh giá là null hoặc undefined, kết quả sẽ là giá trị mặc định.
+Đây là một ví dụ:
+
+javascript
+Copy code
+var x = null;
+var y = "Hello, world";
+
+var result1 = x ?? "Default Value"; // result1 sẽ là "Default Value", vì x là null
+var result2 = y ?? "Default Value"; // result2 sẽ là "Hello, world", vì y không phải là null
+Lưu ý rằng toán tử ?? chỉ kiểm tra giá trị bên trái của nó có phải là null hoặc undefined hay không.
+Nó không xem xét các giá trị falsy khác như 0, false, hoặc "".
+Điều này khác biệt với toán tử "||" (toán tử OR) trong JavaScript, mà sẽ lựa chọn giá trị 
+bên phải nếu giá trị bên trái là falsy.
+
+////////////
+Toán tử "??=" là một toán tử gán trong JavaScript và được gọi là "toán tử gán nullish coalescing".
+ Toán tử này thường được sử dụng để gán giá trị mặc định cho một biến chỉ khi biến đó là null hoặc undefined.
+
+Cú pháp của toán tử ??= là:
+
+javascript
+Copy code
+biến ??= giá_trị_mặc_định;
+Nếu biến không phải là null hoặc undefined, thì giá trị của biến không bị thay đổi.
+Nếu biến là null hoặc undefined, thì giá trị mặc định được gán cho biến.
+Dưới đây là một ví dụ:
+
+javascript
+Copy code
+var x = null;
+var y = "Hello, world";
+
+x ??= "Default Value"; // x sẽ được gán giá trị "Default Value", vì x là null
+y ??= "Default Value"; // y không bị thay đổi, vì y không phải là null
+
+console.log(x); // Kết quả: "Default Value"
+console.log(y); // Kết quả: "Hello, world"
+Toán tử ??= rất hữu ích khi bạn muốn đảm bảo rằng một biến đã được khai báo không bị ghi đè bởi null hoặc undefined,
+ nhưng vẫn muốn cung cấp một giá trị mặc định nếu biến chưa được khởi tạo.
+
+ ///////////////////////
+ Toán tử "||" là toán tử logic OR trong JavaScript.
+ Nó thường được sử dụng để thực hiện phép so sánh logic giữa hai biểu thức
+  và trả về giá trị đầu tiên mà làm cho biểu thức là "đúng" (truthy).
+   Toán tử "||" sẽ kiểm tra biểu thức bên trái trước, và nếu nó đúng (truthy),
+    thì kết quả sẽ là giá trị của biểu thức bên trái. Nếu biểu thức bên trái là falsy,
+     thì nó sẽ kiểm tra và trả về giá trị của biểu thức bên phải.
+
+Dưới đây là cú pháp của toán tử "||":
+
+javascript
+Copy code
+biểu_thức_bên_trái || biểu_thức_bên_phải
+Ví dụ:
+
+javascript
+Copy code
+var x = 5;
+var y = 0;
+
+var result1 = x || 10; // result1 sẽ là 5, vì x là truthy
+var result2 = y || 10; // result2 sẽ là 10, vì y là falsy
+Trong ví dụ trên, result1 sẽ là 5 vì x là một giá trị truthy, trong khi result2 sẽ là 10 vì y là một giá trị falsy.
+
+Toán tử "||" cũng có thể được sử dụng để thiết lập giá trị mặc định cho biến:
+
+javascript
+Copy code
+var name = inputName || "Guest";
+Trong trường hợp này, nếu inputName là một giá trị truthy,
+thì name sẽ nhận giá trị của inputName, ngược lại nếu inputName là falsy (như null, undefined, hoặc ""),
+thì name sẽ nhận giá trị "Guest".
