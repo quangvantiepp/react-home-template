@@ -14,40 +14,9 @@ import HomePage from "../../../pages/home/HomePage";
 import Error404 from "../../../pages/notFound/Error404";
 import TableExpand from "../../../pages/test/TableExpand";
 import FileTest from "../../export/file/FileTest";
+import { items } from "../../../utils/Constant";
 
 const { Header, Content, Footer, Sider } = Layout;
-
-type MenuItem = Required<MenuProps>["items"][number];
-
-function getItem(
-  label: React.ReactNode,
-  key: React.Key,
-  icon?: React.ReactNode,
-  children?: MenuItem[]
-): MenuItem {
-  return {
-    key,
-    icon,
-    children,
-    label,
-  } as MenuItem;
-}
-
-const items: MenuItem[] = [
-  getItem(<Link to="/login">Log out</Link>, "1", <PieChartOutlined />),
-  getItem(<Link to="home"> Home</Link>, "2", <DesktopOutlined />),
-  getItem("List", "3", <UserOutlined />, [
-    getItem(<Link to="table"> Table</Link>, "6"),
-    getItem(<Link to="fileExport"> file</Link>, "3"),
-    getItem("Bill", "4"),
-    getItem("Alex", "5"),
-  ]),
-  getItem("Team", "sub2", <TeamOutlined />, [
-    getItem("Team 1", "6"),
-    getItem("Team 2", "8"),
-  ]),
-  getItem(<Link to="error404"> Page6</Link>, "9", <FileOutlined />),
-];
 
 const items1: MenuProps["items"] = ["1", "2", "3"].map((key) => ({
   key,
