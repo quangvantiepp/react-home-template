@@ -14,7 +14,7 @@ import HomePage from "../../../pages/home/HomePage";
 import Error404 from "../../../pages/notFound/Error404";
 import TableExpand from "../../../pages/test/TableExpand";
 import FileTest from "../../export/file/FileTest";
-import { items } from "../../../utils/Constant";
+import { Routers, items } from "../../../rootRouter";
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -75,13 +75,14 @@ const LayoutMain: React.FC = (props) => {
                 overflowY: "auto",
               }}
             >
-              <Routes>
+              {/* <Routes>
                 <Route path="/login" element={<LoginForm />}></Route>
                 <Route path="home" element={<HomePage />}></Route>
                 <Route path="error404" element={<Error404 />}></Route>
                 <Route path="table" element={<TableExpand />}></Route>
                 <Route path="fileExport" element={<FileTest />}></Route>
-              </Routes>
+              </Routes> */}
+              <Routers />
             </div>
           </Content>
         </div>

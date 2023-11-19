@@ -1,9 +1,10 @@
 import { Button, Result } from "antd";
 import { useEffect, useState } from "react";
-import hotgirl from "../../assets/hotGirl.jpg";
+import wormHole from "../../assets/images/wormhole.png";
 import styles from "./HomePage.module.css";
 import EmbedYoutube from "../../videos/clipYoutube/EmbedYoutube";
 import axios from "axios";
+
 const HomePage: React.FC = () => {
   const [data, setData] = useState<any>([]);
   axios
@@ -17,7 +18,10 @@ const HomePage: React.FC = () => {
   return (
     <div>
       <h3> Home page </h3>
-      <img src={hotgirl} alt="not loading" className={styles.picture} />
+      <div style={{ width: "30%", height: "30%" }}>
+        <img src={wormHole} alt="not loading" className={styles.picture} />
+      </div>
+
       <EmbedYoutube />
     </div>
   );

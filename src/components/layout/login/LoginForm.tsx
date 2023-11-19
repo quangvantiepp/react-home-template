@@ -1,14 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import "./LoginForm.scss";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Button, Checkbox, Form, Input, message } from "antd";
 import { useNavigate } from "react-router-dom";
+import MainContext from "../../../context/MainContext";
 
 const LoginForm: React.FC = (props) => {
   const navigate = useNavigate();
+  const context = useContext(MainContext);
 
   const onFinish = (values: any) => {
     if (values?.username === "tiep" && values?.password === "8888") {
+      context.setIsLogin(true);
       navigate("/main");
     } else {
       message.error("username or password incorrect ");
