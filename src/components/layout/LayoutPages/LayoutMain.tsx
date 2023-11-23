@@ -1,19 +1,6 @@
-import React, { useState } from "react";
-import {
-  DesktopOutlined,
-  FileOutlined,
-  PieChartOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Breadcrumb, Button, Layout, Menu, theme } from "antd";
-import { Link, Route, Routes } from "react-router-dom";
-import LoginForm from "../login/LoginForm";
-import HomePage from "../../../pages/home/HomePage";
-import Error404 from "../../../pages/notFound/Error404";
-import TableExpand from "../../../pages/test/TableExpand";
-import FileTest from "../../export/file/FileTest";
+import { Breadcrumb, Layout, Menu, theme } from "antd";
+import React, { useState } from "react";
 import { Routers, items } from "../../../rootRouter";
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -56,39 +43,27 @@ const LayoutMain: React.FC = (props) => {
               items={items1}
             ></Menu>
           </div>
-          <div>
-            <Button> Button</Button>
+        </div>
+        <Content style={{ margin: "0 16px" }}>
+          <Breadcrumb style={{ margin: "16px 0" }}>
+            <Breadcrumb.Item>User</Breadcrumb.Item>
+            <Breadcrumb.Item>Bill</Breadcrumb.Item>
+          </Breadcrumb>
+          <div
+            style={{
+              padding: 24,
+              maxHeight: "80vh",
+              minHeight: "80vh",
+              background: colorBgContainer,
+              overflowY: "auto",
+            }}
+          >
+            <Routers />
           </div>
-        </div>
-        <div>
-          <Content style={{ margin: "0 16px" }}>
-            <Breadcrumb style={{ margin: "16px 0" }}>
-              <Breadcrumb.Item>User</Breadcrumb.Item>
-              <Breadcrumb.Item>Bill</Breadcrumb.Item>
-            </Breadcrumb>
-            <div
-              style={{
-                padding: 24,
-                maxHeight: "80vh",
-                minHeight: "80vh",
-                background: colorBgContainer,
-                overflowY: "auto",
-              }}
-            >
-              {/* <Routes>
-                <Route path="/login" element={<LoginForm />}></Route>
-                <Route path="home" element={<HomePage />}></Route>
-                <Route path="error404" element={<Error404 />}></Route>
-                <Route path="table" element={<TableExpand />}></Route>
-                <Route path="fileExport" element={<FileTest />}></Route>
-              </Routes> */}
-              <Routers />
-            </div>
-          </Content>
-        </div>
+        </Content>
 
         <Footer style={{ textAlign: "center" }}>
-          Future social ©2023 Created by quang.tiep
+          Future social ©2023 Created by tiep.quang
         </Footer>
       </Layout>
     </Layout>

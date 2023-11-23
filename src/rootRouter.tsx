@@ -8,7 +8,7 @@ import {
 import { MenuProps } from "antd";
 import { Link, Route, Routes } from "react-router-dom";
 import LoginForm from "./components/layout/login/LoginForm";
-import HomePage from "./pages/home/HomePage";
+import HomePage from "./pages/home";
 import Error404 from "./pages/notFound/Error404";
 import TableExpand from "./pages/test/TableExpand";
 import FileTest from "./components/export/file/FileTest";
@@ -46,6 +46,7 @@ export const items: MenuItem[] = [
     <PieChartOutlined />
   ),
   getItem(<Link to="home"> Home</Link>, "2", <DesktopOutlined />),
+  getItem(<Link to="about"> About us </Link>, "2a", <DesktopOutlined />),
   getItem("List", "3", <UserOutlined />, [
     getItem(<Link to="table"> Table</Link>, "6"),
     getItem(<Link to="fileExport"> file</Link>, "3"),
@@ -53,7 +54,7 @@ export const items: MenuItem[] = [
     getItem("Alex", "5"),
   ]),
   getItem("Team", "sub2", <TeamOutlined />, [
-    getItem("Team 1", "6"),
+    getItem("Team 1", "7"),
     getItem("Team 2", "8"),
   ]),
   getItem(<Link to="error404"> Page6</Link>, "9", <FileOutlined />),
@@ -67,6 +68,7 @@ export const Routers = () => {
       <Route path="error404" element={<Error404 />}></Route>
       <Route path="table" element={<TableExpand />}></Route>
       <Route path="fileExport" element={<FileTest />}></Route>
+      <Route path="about" element={<FileTest />}></Route>
     </Routes>
   );
 };
