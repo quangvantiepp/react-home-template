@@ -10,10 +10,12 @@ import Button from "../../components/custom/buttons";
 
 const HomePage: React.FC = () => {
   const [data, setData] = useState<any>([]);
+  const testGetUserId = "http://localhost:8080/users/find_by_id?id=6";
+  const saveLink = "http://localhost:8080/users/3";
   axios
-    .get("http://localhost:8080/users/3")
+    .get(testGetUserId)
     .then((response) => {
-      console.log("res:", response?.data);
+      console.log("res:", response);
     })
     .catch((error) => {
       console.log("error:", error);

@@ -1,7 +1,7 @@
 import type { MenuProps } from "antd";
 import { Breadcrumb, Layout, Menu, theme } from "antd";
 import React, { useState } from "react";
-import { Routers, items } from "../../../rootRouter";
+import { Routers, items } from "../../rootRouter";
 
 const { Header, Content, Footer, Sider } = Layout;
 

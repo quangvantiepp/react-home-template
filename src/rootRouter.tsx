@@ -7,13 +7,14 @@ import {
 } from "@ant-design/icons";
 import { MenuProps } from "antd";
 import { Link, Route, Routes } from "react-router-dom";
-import LoginForm from "./components/layout/login/LoginForm";
+import LoginForm from "./layouts/login/LoginForm";
 import HomePage from "./pages/home";
 import Error404 from "./pages/notFound/Error404";
 import TableExpand from "./pages/test/TableExpand";
 import FileTest from "./components/export/file/FileTest";
 import { useContext } from "react";
 import MainContext from "./context/MainContext";
+import Register from "./layouts/register_form";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
