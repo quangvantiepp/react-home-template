@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Button from "../../components/custom/buttons";
-import Input from "../../components/custom/inputs";
+// import Input from "../../components/custom/inputs";
 import {
   MessageSuccess,
   MessageWarning,
 } from "../../components/custom/messages/ant_message";
 import { registerFormStyles as styles } from "../../styles/layouts/register_form/styles";
 import axios from "axios";
+import { Input } from "antd";
 
 interface DataSubmit {
   fullName: any;
@@ -14,6 +15,7 @@ interface DataSubmit {
   passWord: any;
   age: any;
   email: any;
+  phoneNumber: string;
 }
 
 const Register = () => {
@@ -23,6 +25,7 @@ const Register = () => {
     fullName: null,
     passWord: null,
     userName: null,
+    phoneNumber: "",
   });
 
   const onLoginNow = () => {
@@ -31,7 +34,7 @@ const Register = () => {
 
   const onSubmit = () => {
     const data = dataUserRegister;
-    const http = "http://localhost:8080/users/user_register";
+    const http = "http://localhost:8080/api/user/register";
     if (
       data?.email === null ||
       data?.email?.length <= 0 ||
@@ -49,7 +52,7 @@ const Register = () => {
     }
     axios
       .post(
-        `${http}?age=${data?.age}&email=${data?.email}&fullName=${data?.fullName}&passWord=${data?.passWord}&userName=${data?.userName}`
+        `${http}?age=${data?.age}&email=${data?.email}&fullName=${data?.fullName}&passWord=${data?.passWord}&userName=${data?.userName}&phoneNumber=${data?.phoneNumber}`
       )
       .then((response) => {
         console.log("res:", response);
@@ -77,9 +80,8 @@ const Register = () => {
           placeholder="User name "
           onChange={(e) => onInput(e.target.value, "userName")}
         />
-        <Input
-          type="number"
-          placeholder="Pass word"
+        <Input.Password
+          placeholder="Password"
           onChange={(e) => onInput(e.target.value, "passWord")}
         />
         <Input
@@ -89,6 +91,10 @@ const Register = () => {
         <Input
           placeholder="Email"
           onChange={(e) => onInput(e.target.value, "email")}
+        />
+        <Input
+          placeholder="phone number"
+          onChange={(e) => onInput(e.target.value, "phoneNumber")}
         />
       </div>
       <div>

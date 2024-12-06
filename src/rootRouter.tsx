@@ -15,6 +15,9 @@ import FileTest from "./components/export/file/FileTest";
 import { useContext } from "react";
 import MainContext from "./context/MainContext";
 import Register from "./layouts/register_form";
+import Inbox from "./pages/inbox";
+import Content from "./pages/content";
+import { handleLocalStorage } from "./localStorage";
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -35,9 +38,10 @@ function getItem(
 export const items: MenuItem[] = [
   getItem(
     <Link
-      to="/login"
+      to="/logout"
       onClick={() => {
         const context = useContext(MainContext);
+        handleLocalStorage.setAuthInfo(null);
         return context.setIsLogin(false);
       }}
     >
@@ -58,7 +62,7 @@ export const items: MenuItem[] = [
     getItem("Team 1", "7"),
     getItem("Team 2", "8"),
   ]),
-  getItem(<Link to="error404"> Page6</Link>, "9", <FileOutlined />),
+  getItem(<Link to="inbox"> Inbox</Link>, "9", <FileOutlined />),
 ];
 
 export const Routers = () => {
@@ -70,6 +74,7 @@ export const Routers = () => {
       <Route path="table" element={<TableExpand />}></Route>
       <Route path="fileExport" element={<FileTest />}></Route>
       <Route path="about" element={<FileTest />}></Route>
+      <Route path="inbox" element={<Inbox />}></Route>
     </Routes>
   );
 };

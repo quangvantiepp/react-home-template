@@ -1,17 +1,24 @@
+import { Space } from "antd";
 import React from "react";
 
 const EmbedYoutube: React.FC = () => {
   return (
-    <div>
+    <>
       <iframe
-        width="420"
-        height="315"
-        src="https://www.youtube.com/embed/4YWeFB7cuoM"
+        width="100%"
+        height="500px"
+        src="https://www.youtube.com/embed/6rD4C61STps"
         title="video"
       >
         video
       </iframe>
-    </div>
+      <iframe
+        width="100%"
+        height="500px"
+        src="https://www.youtube.com/embed/-57QMghHX14"
+        title="video"
+      />
+    </>
   );
 };
 
