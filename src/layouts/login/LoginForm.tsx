@@ -1,19 +1,16 @@
-import React, { useContext, useEffect } from "react";
-import "./LoginForm.scss";
 import { LockOutlined, UserOutlined } from "@ant-design/icons";
-import { Button, Checkbox, Form, Input, message } from "antd";
+import { Button, Checkbox, Form, Input } from "antd";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import MainContext from "../../context/MainContext";
-import axios from "axios";
 import {
   MessageError,
-  MessageSuccess,
   MessageWarning,
 } from "../../components/custom/messages/ant_message";
-import { client } from "../../hooks/client";
-import { css } from "@emotion/css";
-import image_galaxy from "../../image/galaxy-image.jpg";
+import MainContext from "../../context/MainContext";
+import { client, CLIENT_ADDRESS } from "../../hooks/client";
 import { handleLocalStorage } from "../../localStorage";
+import "./LoginForm.scss";
+import { css } from "@emotion/css";
 
 interface AuthDataType {
   accessToken: string | null;
@@ -54,22 +51,27 @@ const LoginForm: React.FC = (props) => {
     // navigate("/register");
     window.open(
       // document.URL +
-      "http://localhost:3000/register",
+      `${CLIENT_ADDRESS}/register`,
       "_blank",
       "location=yes,scrollbars=yes,status=yes"
     );
   };
 
   return (
-    <div>
-      <img
-        src="galaxy-image.jpg"
-        style={{
-          position: "absolute",
-          top: 0,
-          width: "98.9vw",
-        }}
-      />
+    <div
+      className={css`
+        background-image: url(https://vpassets.infinityfree.net/welcome2017/background.jpg);
+        background-position: center center;
+        background-size: cover;
+        height: auto;
+        left: 0;
+        min-height: 100%;
+        min-width: 100%;
+        position: absolute;
+        top: 0;
+        width: auto;
+      `}
+    >
       <div
         style={{
           display: "flex",
@@ -77,9 +79,23 @@ const LoginForm: React.FC = (props) => {
         }}
       >
         <div
+          className={css`
+            position: fixed;
+            opacity: 1;
+            background-color: rgba(0, 0, 0, 0.6);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+          `}
+        />
+        <div
           style={{
             position: "fixed",
             top: 140,
+            zIndex: 3,
+            fontWeight: "bolder",
           }}
         >
           <div>
@@ -116,7 +132,6 @@ const LoginForm: React.FC = (props) => {
                 <Form.Item name="remember" valuePropName="checked" noStyle>
                   <Checkbox style={{ color: "white" }}>Remember me</Checkbox>
                 </Form.Item>
-
                 <a className="login-form-forgot" href="">
                   Forgot password
                 </a>
@@ -131,7 +146,11 @@ const LoginForm: React.FC = (props) => {
                 </Button>
                 <span style={{ color: "white" }}> Or </span>
                 <span>
-                  <a href="" onClick={() => onRegister()}>
+                  <a
+                    className="register-box"
+                    href=""
+                    onClick={() => onRegister()}
+                  >
                     register now!
                   </a>
                 </span>
