@@ -3,7 +3,11 @@
   }
 .login-form-forgot {
     float: right;
+    text-shadow: 2px 2px 4px #000000;
   }
+.register-box{
+  text-shadow: 2px 2px 4px #000000;
+}
 .ant-col-rtl .login-form-forgot {
     float: left;
   }

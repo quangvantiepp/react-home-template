@@ -8,8 +8,10 @@ export const registerFormStyles = {
   boxInput: css`
     display: grid;
     row-gap: 10px;
-    width: 50vw;
+    /* width: 50vw; */
+    width: 100%;
     justify-content: center;
-    margin: 10px auto;
+    margin-top: 140px;
+    z-index: 3;
   `,
 };

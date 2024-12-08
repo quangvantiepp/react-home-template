@@ -1,8 +1,11 @@
 import axios from "axios";
 import { handleLocalStorage } from "../../localStorage";
 
+export const SERVER_ADDRESS = process.env.REACT_APP_SERVER_DEV;
+export const CLIENT_ADDRESS = process.env.REACT_APP_CLIENT_ADDRESS;
+
 export const client = axios.create({
-  baseURL: process.env.REACT_APP_SERVER_DEV,
+  baseURL: SERVER_ADDRESS,
   withCredentials: true, // turn on cookie in all request
   headers: {
     post: {
