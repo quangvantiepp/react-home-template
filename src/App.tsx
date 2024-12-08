@@ -40,31 +40,14 @@ const App = () => {
 
   return (
     <div>
-      {isLoading ? (
-        <Spin
-          size="large"
-          style={{ display: "flex", justifyContent: "center", marginTop: 140 }}
-        />
-      ) : (
-        <Routes>
-          <>
-            {context.isLogin ? (
-              <>
-                <Route path="/main/*" element={<LayoutMain />}></Route>
-              </>
-            ) : (
-              <>
-                <Route path={"/login"} element={<LoginForm />}></Route>
-                <Route path="/*" element={<Navigate to="/login" />}></Route>
-              </>
-            )}
-          </>
-
-          <Route path="/content" element={<Content />}></Route>
-          <Route path="/logout" element={<LogoutPage />}></Route>
-          <Route path="/register" element={<Register />}></Route>
-        </Routes>
-      )}
+      <Routes>
+        <Route path="/main/*" element={<LayoutMain />}></Route>
+        <Route path={"/login"} element={<LoginForm />}></Route>
+        <Route path="/logout" element={<LogoutPage />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/*" element={<Navigate to="" />}></Route>
+        <Route path="" element={<Content />}></Route>
+      </Routes>
     </div>
   );
 };
